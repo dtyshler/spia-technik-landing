@@ -134,13 +134,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-10"
+          className="mb-10 flex items-center gap-4 justify-center"
         >
-          <img
-            src="/spia-logo.png"
-            alt="SPIA Technik"
-            className="h-16 sm:h-20 md:h-24 w-auto mx-auto brightness-0 invert"
-          />
+          <svg viewBox="0 0 52 24" className="h-10 sm:h-12 md:h-14 w-auto text-white" fill="currentColor">
+            <path d="M2 18 C5 17 8 15 12 13 L20 10 L17 3 L19.5 2.5 L23 9 L38 5 L36.5 1 L39 0.5 L40.5 4 L49 2.5 C51 2 51.5 4.5 49 5 L40.5 6 L39 10 L36.5 10.5 L38 7 L23 11 L19.5 18 L17 17.5 L20 12 L12 14 C8 16 5 17.5 2 18 Z" />
+          </svg>
+          <div className="flex flex-col text-left">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-light tracking-[0.1em] text-white leading-none">
+              SPIA Technik
+            </span>
+            <span className="text-[10px] sm:text-[11px] tracking-[0.15em] text-white/50 font-light italic leading-none mt-1">
+              Dedicated to Quality.
+            </span>
+          </div>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} className="mb-6">

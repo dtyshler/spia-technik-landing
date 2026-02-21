@@ -40,14 +40,18 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo - always links home */}
-            <a href="/" className="flex items-center gap-3 group">
-              <img
-                src="/spia-logo.png"
-                alt="SPIA Technik"
-                className={`h-11 w-auto transition-all duration-500 ${
-                  scrolled ? "" : "brightness-0 invert"
-                }`}
-              />
+            <a href="/" className="flex items-center gap-2.5 group">
+              <svg viewBox="0 0 52 24" className={`h-7 w-auto transition-colors duration-500 ${scrolled ? "text-dark-950" : "text-white"}`} fill="currentColor">
+                <path d="M2 18 C5 17 8 15 12 13 L20 10 L17 3 L19.5 2.5 L23 9 L38 5 L36.5 1 L39 0.5 L40.5 4 L49 2.5 C51 2 51.5 4.5 49 5 L40.5 6 L39 10 L36.5 10.5 L38 7 L23 11 L19.5 18 L17 17.5 L20 12 L12 14 C8 16 5 17.5 2 18 Z" />
+              </svg>
+              <div className="flex flex-col">
+                <span className={`text-[17px] font-normal tracking-[0.08em] leading-none transition-colors duration-500 ${scrolled ? "text-dark-950" : "text-white"}`}>
+                  SPIA Technik
+                </span>
+                <span className={`text-[8px] tracking-[0.12em] leading-none mt-0.5 font-light italic transition-colors duration-500 ${scrolled ? "text-text-muted" : "text-white/50"}`}>
+                  Dedicated to Quality.
+                </span>
+              </div>
             </a>
 
             <div className="hidden md:flex items-center gap-1">

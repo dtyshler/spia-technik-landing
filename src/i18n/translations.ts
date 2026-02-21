@@ -18,7 +18,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "nav.global": "Global",
     "nav.about": "About",
     "nav.contact": "Contact",
-    "nav.getInTouch": "Request Consultation",
+    "nav.getInTouch": "Contact Us",
 
     // Hero
     "hero.tagline": "A-Rated Quality \u00B7 100% On-Time Delivery",
@@ -27,7 +27,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "hero.title3": "That Delivers",
     "hero.subtitle": "Supporting major aircraft interior suppliers across Boeing and Airbus commercial programs. Surge capacity. Specialized expertise. Seamless integration.",
     "hero.cta1": "Our Capabilities",
-    "hero.cta2": "Request Consultation",
+    "hero.cta2": "Contact Us",
     "hero.platforms": "Programs",
     "hero.scroll": "Scroll",
 
@@ -114,7 +114,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "contact.name": "Name",
     "contact.company": "Company",
     "contact.message": "Message",
-    "contact.send": "Request Consultation",
+    "contact.send": "Contact Us",
     "contact.namePh": "Your name",
     "contact.emailPh": "your@email.com",
     "contact.companyPh": "Your company",
