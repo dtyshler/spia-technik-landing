@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Dark palette - hero, footer, accent sections */
+  --color-dark-950: #0B1120;
+  --color-dark-900: #111927;
+  --color-dark-800: #1A2332;
+  --color-dark-700: #243044;
+
+  /* Light palette - content sections */
+  --color-light-50: #FFFFFF;
+  --color-light-100: #F7F8FA;
+  --color-light-200: #EEF0F4;
+  --color-light-300: #DFE3EA;
+
+  /* Text */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #9CA3AF;
+  --color-text-light: #E5E7EB;
+
+  /* Accent */
+  --color-gold-500: #B8956A;
+  --color-gold-400: #CBAA82;
+  --color-gold-300: #DDC09C;
+  --color-gold-600: #9A7A52;
+
+  /* Keep navy references working */
+  --color-navy-950: #0B1120;
+  --color-navy-900: #111927;
+  --color-navy-800: #1A2332;
+  --color-navy-700: #243044;
+
+  --color-slate-400: #9CA3AF;
+  --color-slate-300: #CBD5E1;
+  --color-slate-200: #E2E8F0;
+  --color-slate-100: #F1F5F9;
+  --color-white: #FFFFFF;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #FFFFFF;
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-gold-500);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F8FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-500);
 }
