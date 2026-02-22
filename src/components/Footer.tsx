@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/i18n/LanguageContext";
+import LogoIcon from "./LogoIcon";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -18,16 +19,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <div>
-            <div className="flex items-center gap-3">
-              <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
-                <path d="M4 18 C4 18, 12 12, 20 14 C24 15, 28 13, 32 10" stroke="#B8956A" strokeWidth="2" strokeLinecap="round" />
-                <path d="M6 22 C6 22, 14 18, 22 19 C26 19.5, 30 17, 34 14" stroke="#B8956A" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
-              </svg>
-              <div className="flex flex-col">
-                <span className="text-white text-sm font-light tracking-[0.25em] leading-none">SPIA</span>
-                <span className="text-gold-500 text-[9px] tracking-[0.35em] uppercase leading-none mt-0.5">Technik</span>
-              </div>
-            </div>
+            <LogoIcon variant="full" className="h-8 w-auto" />
             <p className="mt-4 text-[13px] text-slate-400 font-light leading-relaxed max-w-xs">{t("footer.tagline")}</p>
           </div>
 

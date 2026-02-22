@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 const jobs = [
   {
@@ -154,6 +155,7 @@ const jobs = [
 ];
 
 export default function Careers() {
+  const { t } = useTranslation();
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState("");
@@ -234,17 +236,15 @@ export default function Careers() {
         <AnimatedSection>
           <div className="max-w-2xl mb-12">
             <span className="text-[11px] tracking-[0.4em] uppercase text-gold-500 font-bold">
-              Careers
+              {t("careers.label")}
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-extralight tracking-tight text-text-primary leading-[1.15]">
-              Join our
+              {t("careers.title1")}
               <br />
-              <span className="text-text-muted">engineering team</span>
+              <span className="text-text-muted">{t("careers.title2")}</span>
             </h2>
             <p className="mt-4 text-[15px] text-text-secondary font-light leading-relaxed">
-              We are always looking for talented engineers to join our global
-              team. If you have experience in aircraft interior engineering,
-              stress analysis, or CAD/CAE systems, we want to hear from you.
+              {t("careers.desc")}
             </p>
           </div>
         </AnimatedSection>
@@ -305,7 +305,7 @@ export default function Careers() {
                           {/* Responsibilities */}
                           <div>
                             <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold-600 font-bold mb-4">
-                              Responsibilities
+                              {t("careers.responsibilities")}
                             </h4>
                             <ul className="space-y-2.5">
                               {job.responsibilities.map((item, idx) => (
@@ -323,7 +323,7 @@ export default function Careers() {
                           {/* Requirements */}
                           <div>
                             <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold-600 font-bold mb-4">
-                              Requirements
+                              {t("careers.requirements")}
                             </h4>
                             <ul className="space-y-2.5">
                               {job.requirements.map((item, idx) => (
@@ -341,7 +341,7 @@ export default function Careers() {
                           {/* Preferred */}
                           <div>
                             <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold-600 font-bold mb-4">
-                              Preferred Qualifications
+                              {t("careers.preferred")}
                             </h4>
                             <ul className="space-y-2.5">
                               {job.preferred.map((item, idx) => (
@@ -362,10 +362,10 @@ export default function Careers() {
                             onClick={() => handleApply(job.title)}
                             className="px-8 py-3 bg-dark-950 text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-dark-800 transition-colors duration-300"
                           >
-                            Apply for this Position
+                            {t("careers.apply")}
                           </button>
                           <span className="text-[12px] text-text-muted">
-                            or email{" "}
+                            {t("careers.orEmail")}{" "}
                             <a
                               href={`mailto:careers@spiatechnik.com?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
                               className="text-gold-600 hover:text-gold-500 underline underline-offset-4 transition-colors"
@@ -397,10 +397,10 @@ export default function Careers() {
               <div className="flex items-center justify-between mb-10">
                 <div>
                   <span className="text-[11px] tracking-[0.4em] uppercase text-gold-500 font-bold">
-                    Apply
+                    {t("careers.applyLabel")}
                   </span>
                   <h3 className="mt-2 text-2xl font-extralight text-text-primary">
-                    Application for{" "}
+                    {t("careers.applicationFor")}{" "}
                     <span className="text-gold-600">{selectedPosition}</span>
                   </h3>
                 </div>
@@ -424,7 +424,7 @@ export default function Careers() {
                 {/* Personal Information */}
                 <div>
                   <h4 className="text-[10px] tracking-[0.25em] uppercase text-text-muted font-bold mb-5">
-                    Personal Information
+                    {t("careers.personalInfo")}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
@@ -432,7 +432,7 @@ export default function Careers() {
                         htmlFor="career-name"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Full Name *
+                        {t("careers.fullName")} *
                       </label>
                       <input
                         type="text"
@@ -450,7 +450,7 @@ export default function Careers() {
                         htmlFor="career-email"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Email *
+                        {t("careers.emailLabel")} *
                       </label>
                       <input
                         type="email"
@@ -468,7 +468,7 @@ export default function Careers() {
                         htmlFor="career-phone"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Phone Number
+                        {t("careers.phoneLabel")}
                       </label>
                       <input
                         type="tel"
@@ -485,7 +485,7 @@ export default function Careers() {
                         htmlFor="career-linkedin"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        LinkedIn / Portfolio URL
+                        {t("careers.linkedin")}
                       </label>
                       <input
                         type="url"
@@ -503,7 +503,7 @@ export default function Careers() {
                 {/* Education */}
                 <div>
                   <h4 className="text-[10px] tracking-[0.25em] uppercase text-text-muted font-bold mb-5">
-                    Education
+                    {t("careers.educationSection")}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                     <div>
@@ -511,7 +511,7 @@ export default function Careers() {
                         htmlFor="career-university"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        University / Institution *
+                        {t("careers.university")} *
                       </label>
                       <input
                         type="text"
@@ -529,7 +529,7 @@ export default function Careers() {
                         htmlFor="career-degree"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Degree *
+                        {t("careers.degreeLabel")} *
                       </label>
                       <select
                         id="career-degree"
@@ -556,7 +556,7 @@ export default function Careers() {
                         htmlFor="career-field"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Field of Study *
+                        {t("careers.fieldOfStudy")} *
                       </label>
                       <input
                         type="text"
@@ -575,7 +575,7 @@ export default function Careers() {
                 {/* Experience */}
                 <div>
                   <h4 className="text-[10px] tracking-[0.25em] uppercase text-text-muted font-bold mb-5">
-                    Experience
+                    {t("careers.experienceSection")}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                     <div>
@@ -583,7 +583,7 @@ export default function Careers() {
                         htmlFor="career-years"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Years of Experience *
+                        {t("careers.yearsExp")} *
                       </label>
                       <select
                         id="career-years"
@@ -606,7 +606,7 @@ export default function Careers() {
                         htmlFor="career-title"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Current Job Title
+                        {t("careers.currentTitle")}
                       </label>
                       <input
                         type="text"
@@ -623,7 +623,7 @@ export default function Careers() {
                         htmlFor="career-company"
                         className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                       >
-                        Current Company
+                        {t("careers.currentCompany")}
                       </label>
                       <input
                         type="text"
@@ -644,7 +644,7 @@ export default function Careers() {
                     htmlFor="career-position"
                     className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                   >
-                    Position Applying For
+                    {t("careers.positionLabel")}
                   </label>
                   <input
                     type="text"
@@ -663,7 +663,7 @@ export default function Careers() {
                     htmlFor="career-message"
                     className="block text-[10px] tracking-[0.2em] uppercase text-text-muted mb-2"
                   >
-                    Cover Letter / Message
+                    {t("careers.coverLetter")}
                   </label>
                   <textarea
                     id="career-message"
@@ -680,11 +680,9 @@ export default function Careers() {
                 <div className="bg-light-100 px-5 py-4 border-l-2 border-gold-500">
                   <p className="text-[13px] text-text-secondary font-light leading-relaxed">
                     <strong className="text-text-primary font-medium">
-                      Resume / CV:
+                      {t("careers.resumeLabel")}
                     </strong>{" "}
-                    Clicking &quot;Submit Application&quot; will open your email
-                    client. Please attach your resume/CV to the email before
-                    sending. Accepted formats: PDF, DOC, DOCX.
+                    {t("careers.resumeDesc")}
                   </p>
                 </div>
 
@@ -692,7 +690,7 @@ export default function Careers() {
                   type="submit"
                   className="px-10 py-3.5 bg-dark-950 text-white text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-dark-800 transition-colors duration-300"
                 >
-                  Submit Application
+                  {t("careers.submit")}
                 </button>
               </form>
             </motion.div>
@@ -704,7 +702,7 @@ export default function Careers() {
           <AnimatedSection delay={0.2}>
             <div className="mt-10 text-center">
               <p className="text-[15px] text-text-muted font-light">
-                Don&apos;t see a role that fits?{" "}
+                {t("careers.noRole")}{" "}
                 <button
                   onClick={() => {
                     setSelectedPosition("General Application");
@@ -716,7 +714,7 @@ export default function Careers() {
                   }}
                   className="text-gold-600 hover:text-gold-500 underline underline-offset-4 transition-colors"
                 >
-                  Send us your resume
+                  {t("careers.sendResume")}
                 </button>
               </p>
             </div>

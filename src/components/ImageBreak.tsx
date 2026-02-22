@@ -10,6 +10,7 @@ interface ImageBreakProps {
   overlaySubtext?: string;
   height?: string;
   hideAnnotation?: boolean;
+  blurImage?: boolean;
 }
 
 export default function ImageBreak({
@@ -19,6 +20,7 @@ export default function ImageBreak({
   overlaySubtext,
   height = "h-[80vh]",
   hideAnnotation = false,
+  blurImage = false,
 }: ImageBreakProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
@@ -32,7 +34,7 @@ export default function ImageBreak({
       {/* Background Image with Parallax */}
       <motion.div style={{ y, scale: imgScale }} className="absolute inset-[-10%] z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className={`absolute inset-0 bg-cover bg-center ${blurImage ? "blur-[3px] scale-[1.02]" : ""}`}
           style={{ backgroundImage: `url(${imageUrl})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
@@ -41,7 +43,7 @@ export default function ImageBreak({
 
       {/* Grid Overlay for texture */}
       <div
-        className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 z-10 opacity-[0.07] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,
           backgroundSize: "60px 60px",

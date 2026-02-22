@@ -38,7 +38,7 @@ export default function Technology() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative py-20 lg:py-28 bg-white">
+    <section id="technology" className="relative py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <AnimatedSection>
           <div className="text-center max-w-2xl mx-auto mb-12">

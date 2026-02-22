@@ -20,22 +20,23 @@ export default function Home() {
       <Navigation />
       <Hero />
 
+      <About />
+
       <ImageBreak
         imageUrl="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1920&q=80"
-        alt="Commercial Aviation"
-        overlayText={t("break.skies")}
-        overlaySubtext={t("break.skies.sub")}
+        alt={t("break.partner.alt")}
+        overlayText={t("break.partner")}
+        overlaySubtext={t("break.partner.sub")}
         height="h-[65vh]"
       />
 
-      <About />
       <Services />
 
       <ImageBreak
         imageUrl="https://images.unsplash.com/photo-1540339832862-474599807836?w=1920&q=80"
-        alt="Aircraft Interior"
-        overlayText={t("break.detail")}
-        overlaySubtext={t("break.detail.sub")}
+        alt={t("break.precision.alt")}
+        overlayText={t("break.precision")}
+        overlaySubtext={t("break.precision.sub")}
         height="h-[55vh]"
         hideAnnotation
       />
