@@ -45,27 +45,27 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <a href="/" className={`flex items-center group ${light ? "mt-1 -ml-8 lg:-ml-12" : "mt-8 -ml-16 lg:-ml-24"}`}>
-              <LogoIcon variant="full" light={light} className={`w-auto ${light ? "h-9 sm:h-10" : "h-14 sm:h-16 md:h-[4.5rem]"}`} />
+          <div className="flex items-center justify-between h-20 gap-4">
+            <a href="/" className={`flex items-center shrink-0 group ${light ? "mt-1 -ml-8 lg:-ml-12" : "mt-12 -ml-24 lg:-ml-32"}`}>
+              <LogoIcon variant="full" light={light} className={`w-auto ${light ? "h-9 sm:h-10" : "h-16 sm:h-20 md:h-24 lg:h-[6.5rem]"}`} />
             </a>
 
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-1 min-w-0 shrink">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-[13px] tracking-[0.12em] uppercase transition-colors duration-300 ${light ? "text-text-secondary hover:text-text-primary" : "text-white/70 hover:text-white"}`}
+                  className={`relative px-3 py-2 text-[10px] sm:text-[11px] lg:text-[12px] tracking-[0.12em] uppercase transition-colors duration-300 ${light ? "text-text-secondary hover:text-text-primary" : "text-white/70 hover:text-white"}`}
                 >
                   {link.label}
                 </a>
               ))}
-              <div className={`ml-3 ${light ? "text-text-secondary" : "text-white/70"}`}>
+              <div className={`ml-3 shrink-0 ${light ? "text-text-secondary" : "text-white/70"}`}>
                 <LanguageSwitcher />
               </div>
               <a
                 href="/#contact"
-                className={`ml-3 px-6 py-2.5 text-[12px] tracking-[0.18em] uppercase transition-all duration-300 whitespace-nowrap ${light ? "border border-dark-950 text-dark-950 hover:bg-dark-950 hover:text-white" : "border border-gold-500/40 text-gold-500 hover:bg-gold-500 hover:text-dark-950"}`}
+                className={`ml-3 shrink-0 px-6 py-2.5 text-[12px] tracking-[0.18em] uppercase transition-all duration-300 whitespace-nowrap ${light ? "border border-dark-950 text-dark-950 hover:bg-dark-950 hover:text-white" : "border border-gold-500/40 text-gold-500 hover:bg-gold-500 hover:text-dark-950"}`}
               >
                 {t("nav.getInTouch")}
               </a>

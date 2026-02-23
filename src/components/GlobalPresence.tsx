@@ -3,12 +3,9 @@
 import AnimatedSection from "./AnimatedSection";
 import { useTranslation } from "@/i18n/LanguageContext";
 
-const locations = [
-  {
-    city: "Seattle, WA",
-    country: "United States",
+const locationKeys = [
+  { cityKey: "global.loc1.city", countryKey: "global.loc1.country", phone: "+1-206-799-5955",
     roleKey: "global.hq",
-    phone: "+1-206-799-5955",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
         {Array.from({ length: 13 }).map((_, i) => (
@@ -24,11 +21,7 @@ const locations = [
       </svg>
     ),
   },
-  {
-    city: "Tbilisi",
-    country: "Georgia",
-    roleKey: "global.division",
-    phone: "+995-511-279-997",
+  { cityKey: "global.loc2.city", countryKey: "global.loc2.country", roleKey: "global.division", phone: "+995-511-279-997",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
         <rect x="0" y="0" width="60" height="40" fill="#FFFFFF" />
@@ -43,11 +36,7 @@ const locations = [
       </svg>
     ),
   },
-  {
-    city: "Kharkiv",
-    country: "Ukraine",
-    roleKey: "global.division",
-    phone: "+38-57-732-5193",
+  { cityKey: "global.loc3.city", countryKey: "global.loc3.country", roleKey: "global.division", phone: "+38-57-732-5193",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
         <rect x="0" y="0" width="60" height="20" fill="#005BBB" />
@@ -74,8 +63,8 @@ export default function GlobalPresence() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08]">
-          {locations.map((loc, i) => (
-            <AnimatedSection key={loc.city} delay={i * 0.12}>
+          {locationKeys.map((loc, i) => (
+            <AnimatedSection key={loc.cityKey} delay={i * 0.12}>
               <div className="relative group hover:brightness-110 transition-all duration-700 overflow-hidden min-h-[300px] flex flex-col">
                 {/* Flag - full vibrant color */}
                 <div className="absolute inset-0">{loc.flagSvg}</div>
@@ -97,8 +86,8 @@ export default function GlobalPresence() {
                       {t(loc.roleKey)}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-light text-white tracking-wide">{loc.city}</h3>
-                  <p className="mt-1 text-sm text-slate-200 font-light">{loc.country}</p>
+                  <h3 className="text-2xl font-light text-white tracking-wide">{t(loc.cityKey)}</h3>
+                  <p className="mt-1 text-sm text-slate-200 font-light">{t(loc.countryKey)}</p>
                   <div className="mt-5 pt-4 border-t border-white/[0.12]">
                     <a href={`tel:${loc.phone.replace(/[^+\d]/g, "")}`} className="text-sm text-slate-200 font-mono tracking-wider hover:text-gold-400 transition-colors">
                       {loc.phone}

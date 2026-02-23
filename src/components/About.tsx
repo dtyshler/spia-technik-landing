@@ -14,7 +14,7 @@ export default function About() {
           <div className="relative w-full aspect-[21/9] overflow-hidden mb-16">
             <img
               src="/team-office.png"
-              alt="SPIA Technik engineering team"
+              alt={t("about.teamImgAlt")}
               className="w-full h-full object-cover blur-[2px]"
             />
             <div className="absolute inset-0 bg-dark-950/60" />
@@ -23,13 +23,14 @@ export default function About() {
                 {t("break.team.sub")}
               </span>
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-extralight tracking-tight">
-                <span className="bg-gold-500/80 text-white px-4 py-1 inline-block leading-[1.5] shadow-lg">
-                  Engineering Excellence,
-                </span>
-                <br />
-                <span className="bg-gold-500/80 text-white px-4 py-1 inline-block leading-[1.5] shadow-lg mt-1">
-                  Worldwide
-                </span>
+                {t("break.team").split("\n").map((line, i) => (
+                  <span key={i}>
+                    {i > 0 && <br />}
+                    <span className={`bg-gold-500/80 text-white px-4 py-1 inline-block leading-[1.5] shadow-lg ${i > 0 ? "mt-1" : ""}`}>
+                      {line}
+                    </span>
+                  </span>
+                ))}
               </h3>
             </div>
           </div>
@@ -63,21 +64,12 @@ export default function About() {
 
         <AnimatedSection delay={0.3}>
           <div className="mt-12 flex flex-wrap items-center gap-3">
-            {[
-              "Structural Analysis",
-              "Interior Design",
-              "CAD/CAE Modeling",
-              "Stress Reports",
-              "MEI Documentation",
-              "Turnkey Modifications",
-              "VIP Configurations",
-              "Load Analysis",
-            ].map((cap) => (
+            {["about.cap1", "about.cap2", "about.cap3", "about.cap4", "about.cap5", "about.cap6", "about.cap7", "about.cap8"].map((key) => (
               <span
-                key={cap}
+                key={key}
                 className="px-4 py-2 text-[13px] tracking-[0.12em] uppercase font-semibold text-black border-2 border-black/20 hover:border-gold-500 hover:text-gold-600 bg-white shadow-sm transition-all duration-300 cursor-default"
               >
-                {cap}
+                {t(key)}
               </span>
             ))}
           </div>

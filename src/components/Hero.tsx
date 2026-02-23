@@ -44,26 +44,6 @@ export default function Hero() {
       <div className="absolute inset-0">
         {/* Lighter edges via radial gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#0B1120_30%,#182740_65%,#223450_100%)]" />
-        {/* Graph paper grid - vignette mask dims center behind text */}
-        <div
-          className="absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-            maskImage: "radial-gradient(ellipse 80% 65% at 50% 45%, black 55%, rgba(0,0,0,0.4) 70%, white 85%)",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 65% at 50% 45%, black 55%, rgba(0,0,0,0.4) 70%, white 85%)",
-          }}
-        />
-        {/* Finer sub-grid */}
-        <div
-          className="absolute inset-0 opacity-[0.1]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.4) 0.5px, transparent 0.5px), linear-gradient(90deg, rgba(255,255,255,0.4) 0.5px, transparent 0.5px)`,
-            backgroundSize: "12px 12px",
-            maskImage: "radial-gradient(ellipse 80% 65% at 50% 45%, black 55%, rgba(0,0,0,0.4) 70%, white 85%)",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 65% at 50% 45%, black 55%, rgba(0,0,0,0.4) 70%, white 85%)",
-          }}
-        />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gold-500/[0.03] rounded-full blur-[120px]" />
       </div>
 
@@ -240,7 +220,7 @@ export default function Hero() {
 
       <motion.div style={{ y, opacity }} className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} className="mb-6">
-          <span className="inline-flex items-center gap-4 text-[15px] sm:text-base tracking-[0.35em] uppercase text-gold-400 font-extrabold drop-shadow-lg">
+          <span className="inline-flex items-center gap-4 text-base sm:text-lg tracking-[0.35em] uppercase text-gold-400 font-extrabold drop-shadow-lg">
             <span className="w-12 h-[1px] bg-gold-400/80" />
             <span className="text-gold-400/95">{t("hero.tagline")}</span>
             <span className="w-12 h-[1px] bg-gold-400/80" />
@@ -248,20 +228,20 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white leading-[1.08]">
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-[1.08]">
           {t("hero.title1")} {t("hero.title2")}
           <br />
           <span className="text-gold-500 font-medium italic">{t("hero.title3")}</span>
         </motion.h1>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-6 text-base md:text-lg text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed">
+          className="mt-6 text-lg md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed">
           {t("hero.subtitle")}
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#contact" className="px-8 py-3.5 border border-white/20 text-white text-[12px] tracking-[0.2em] uppercase font-light hover:border-white/50 transition-colors duration-300">
+          <a href="#contact" className="px-8 py-3.5 border border-white/20 text-white text-sm tracking-[0.2em] uppercase font-light hover:border-white/50 transition-colors duration-300">
             {t("hero.cta2")}
           </a>
         </motion.div>
@@ -269,7 +249,7 @@ export default function Hero() {
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5">
-        <span className="text-sm tracking-[0.35em] uppercase text-gold-400 font-semibold">{t("hero.scroll")}</span>
+        <span className="text-base tracking-[0.35em] uppercase text-gold-400 font-semibold">{t("hero.scroll")}</span>
         <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="w-[3px] h-20 bg-gradient-to-b from-gold-500 to-transparent rounded-full" />
       </motion.div>
     </section>

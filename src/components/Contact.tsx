@@ -35,7 +35,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-gold-500/70 mb-1">{t("contact.hq")}</div>
-                  <p className="text-[15px] text-text-primary font-light">Seattle, WA, United States</p>
+                  <p className="text-[15px] text-text-primary font-light">{t("contact.location")}</p>
                 </div>
                 <div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-gold-500/70 mb-1">{t("contact.phone")}</div>

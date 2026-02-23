@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a href="mailto:info@spiatechnik.com" className="block text-[13px] text-slate-400 hover:text-white transition-colors">info@spiatechnik.com</a>
               <a href="tel:+12067995955" className="block text-[13px] text-slate-400 hover:text-white transition-colors font-mono">+1-206-799-5955</a>
-              <p className="text-[13px] text-slate-400/60 font-light">Seattle, WA, USA</p>
+              <p className="text-[13px] text-slate-400/60 font-light">{t("footer.location")}</p>
             </div>
           </div>
         </div>

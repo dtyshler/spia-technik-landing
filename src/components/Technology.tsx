@@ -16,8 +16,9 @@ function LogoCarousel() {
   const doubled = [...tools, ...tools];
   return (
     <div className="relative overflow-hidden py-6">
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
+      {/* Faint left/right gradients, invisible in the middle */}
+      <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-white/60 via-white/10 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-white/60 via-white/10 to-transparent z-10 pointer-events-none" />
       <motion.div className="flex items-center gap-14" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
         {doubled.map((tool, i) => (
           <div key={`${tool.name}-${i}`} className="flex-shrink-0 flex flex-col items-center gap-2">
@@ -37,9 +38,35 @@ function LogoCarousel() {
 export default function Technology() {
   const { t } = useTranslation();
 
+  const gridStyle = {
+    backgroundImage: `
+      linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px)
+    `,
+    backgroundSize: "20px 20px",
+  };
+
   return (
-    <section id="technology" className="relative py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="technology" className="relative py-20 lg:py-28 bg-white overflow-hidden">
+      {/* Grid paper: left side, fades toward center */}
+      <div
+        className="absolute inset-y-0 left-0 w-[35%] max-w-md pointer-events-none z-0"
+        style={{
+          ...gridStyle,
+          WebkitMaskImage: "linear-gradient(to right, black, transparent)",
+          maskImage: "linear-gradient(to right, black, transparent)",
+        }}
+      />
+      {/* Grid paper: right side, fades toward center */}
+      <div
+        className="absolute inset-y-0 right-0 w-[35%] max-w-md pointer-events-none z-0"
+        style={{
+          ...gridStyle,
+          WebkitMaskImage: "linear-gradient(to left, black, transparent)",
+          maskImage: "linear-gradient(to left, black, transparent)",
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <AnimatedSection>
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[11px] tracking-[0.4em] uppercase text-gold-500 font-bold">{t("tech.label")}</span>
@@ -52,17 +79,6 @@ export default function Technology() {
 
         <AnimatedSection delay={0.2}>
           <LogoCarousel />
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.3}>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-px bg-light-300 max-w-3xl mx-auto">
-            {tools.map((tool) => (
-              <div key={tool.name} className="bg-white p-4 text-center group hover:bg-light-100 transition-all duration-300">
-                <div className="text-sm font-normal text-text-primary">{tool.name}</div>
-                <div className="mt-0.5 text-[9px] tracking-[0.2em] uppercase text-gold-500/60">{tool.category}</div>
-              </div>
-            ))}
-          </div>
         </AnimatedSection>
       </div>
     </section>

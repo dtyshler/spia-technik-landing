@@ -9,7 +9,7 @@ const jobs = [
   {
     title: "Mechanical Engineer",
     location: "Tbilisi, Georgia / Remote",
-    type: "Full-Time",
+    typeKey: "careers.fullTime",
     summary:
       "Design and document aircraft interior components including galleys, monuments, stowage, and cabin panels using industry-standard CAD tools. You will work directly on Tier-1 supplier programs for major OEMs.",
     responsibilities: [
@@ -38,7 +38,7 @@ const jobs = [
   {
     title: "Aerospace / Aero-Astro Engineer",
     location: "Tbilisi, Georgia / Remote",
-    type: "Full-Time",
+    typeKey: "careers.fullTime",
     summary:
       "Perform structural analysis, FEA, and load reports for aircraft interior systems. You will support multiple concurrent modification programs and work alongside mechanical designers and project engineers.",
     responsibilities: [
@@ -67,7 +67,7 @@ const jobs = [
   {
     title: "Stress Engineer",
     location: "Tbilisi, Georgia / Remote",
-    type: "Full-Time",
+    typeKey: "careers.fullTime",
     summary:
       "Prepare interface load reports, structural substantiation, and tolerance analysis for interior modifications. You will be responsible for ensuring all structural deliverables meet OEM and regulatory requirements.",
     responsibilities: [
@@ -96,7 +96,7 @@ const jobs = [
   {
     title: "CAD Designer",
     location: "Tbilisi, Georgia / Remote",
-    type: "Full-Time",
+    typeKey: "careers.fullTime",
     summary:
       "Create production-ready 3D models and 2D drawing packages for aircraft interior programs. You will translate engineering concepts into precise, manufacturing-ready documentation.",
     responsibilities: [
@@ -125,7 +125,7 @@ const jobs = [
   {
     title: "Project Engineer",
     location: "Seattle, WA / Remote",
-    type: "Full-Time",
+    typeKey: "careers.fullTime",
     summary:
       "Coordinate engineering deliverables across multiple interior modification programs. You will serve as the primary technical interface between SPIA Technik and Tier-1 supplier program teams.",
     responsibilities: [
@@ -271,7 +271,7 @@ export default function Careers() {
                         {job.location}
                       </span>
                       <span className="text-[10px] tracking-[0.15em] uppercase text-gold-600 bg-gold-500/[0.06] px-2 py-0.5 border border-gold-500/15">
-                        {job.type}
+                        {t(job.typeKey)}
                       </span>
                     </div>
                   </div>
@@ -442,7 +442,7 @@ export default function Careers() {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="Your full name"
+                        placeholder={t("careers.placeholderName")}
                       />
                     </div>
                     <div>
@@ -460,7 +460,7 @@ export default function Careers() {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="your@email.com"
+                        placeholder={t("careers.placeholderEmail")}
                       />
                     </div>
                     <div>
@@ -477,7 +477,7 @@ export default function Careers() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder={t("careers.placeholderPhone")}
                       />
                     </div>
                     <div>
@@ -494,7 +494,7 @@ export default function Careers() {
                         value={formData.linkedin}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="https://linkedin.com/in/..."
+                        placeholder={t("careers.placeholderLinkedin")}
                       />
                     </div>
                   </div>
@@ -521,7 +521,7 @@ export default function Careers() {
                         value={formData.university}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="MIT, Georgia Tech, TU Munich..."
+                        placeholder={t("careers.placeholderUniversity")}
                       />
                     </div>
                     <div>
@@ -539,16 +539,12 @@ export default function Careers() {
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light focus:border-gold-500 focus:outline-none transition-colors appearance-none"
                       >
-                        <option value="">Select degree</option>
-                        <option value="Associate's">
-                          Associate&apos;s Degree
-                        </option>
-                        <option value="Bachelor's">
-                          Bachelor&apos;s Degree
-                        </option>
-                        <option value="Master's">Master&apos;s Degree</option>
-                        <option value="PhD">PhD / Doctorate</option>
-                        <option value="Other">Other</option>
+                        <option value="">{t("careers.selectDegree")}</option>
+                        <option value="Associate's">{t("careers.degreeAssociate")}</option>
+                        <option value="Bachelor's">{t("careers.degreeBachelor")}</option>
+                        <option value="Master's">{t("careers.degreeMaster")}</option>
+                        <option value="PhD">{t("careers.degreePhd")}</option>
+                        <option value="Other">{t("careers.degreeOther")}</option>
                       </select>
                     </div>
                     <div>
@@ -566,7 +562,7 @@ export default function Careers() {
                         value={formData.fieldOfStudy}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="Mechanical Engineering, Aerospace..."
+                        placeholder={t("careers.placeholderField")}
                       />
                     </div>
                   </div>
@@ -593,12 +589,12 @@ export default function Careers() {
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light focus:border-gold-500 focus:outline-none transition-colors appearance-none"
                       >
-                        <option value="">Select range</option>
-                        <option value="0-1">0 - 1 years</option>
-                        <option value="2-3">2 - 3 years</option>
-                        <option value="4-6">4 - 6 years</option>
-                        <option value="7-10">7 - 10 years</option>
-                        <option value="10+">10+ years</option>
+                        <option value="">{t("careers.selectRange")}</option>
+                        <option value="0-1">{t("careers.years01")}</option>
+                        <option value="2-3">{t("careers.years23")}</option>
+                        <option value="4-6">{t("careers.years46")}</option>
+                        <option value="7-10">{t("careers.years710")}</option>
+                        <option value="10+">{t("careers.years10")}</option>
                       </select>
                     </div>
                     <div>
@@ -615,7 +611,7 @@ export default function Careers() {
                         value={formData.currentTitle}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="Senior Mechanical Engineer"
+                        placeholder={t("careers.placeholderTitle")}
                       />
                     </div>
                     <div>
@@ -632,7 +628,7 @@ export default function Careers() {
                         value={formData.currentCompany}
                         onChange={handleChange}
                         className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                        placeholder="Safran, Collins, Boeing..."
+                        placeholder={t("careers.placeholderCompany")}
                       />
                     </div>
                   </div>
@@ -653,7 +649,7 @@ export default function Careers() {
                     value={formData.position}
                     onChange={handleChange}
                     className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors"
-                    placeholder="Position applying for"
+                    placeholder={t("careers.placeholderPosition")}
                   />
                 </div>
 
@@ -672,7 +668,7 @@ export default function Careers() {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full bg-transparent border-b border-light-300 pb-2.5 text-[15px] text-text-primary font-light placeholder-text-muted/40 focus:border-gold-500 focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us about your experience, relevant projects, and why you're interested in joining SPIA Technik..."
+                    placeholder={t("careers.placeholderCover")}
                   />
                 </div>
 
@@ -705,10 +701,10 @@ export default function Careers() {
                 {t("careers.noRole")}{" "}
                 <button
                   onClick={() => {
-                    setSelectedPosition("General Application");
+                    setSelectedPosition(t("careers.generalApplication"));
                     setFormData((prev) => ({
                       ...prev,
-                      position: "General Application",
+                      position: t("careers.generalApplication"),
                     }));
                     setShowForm(true);
                   }}
