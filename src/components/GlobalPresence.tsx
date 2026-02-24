@@ -21,7 +21,15 @@ const locationKeys = [
       </svg>
     ),
   },
-  { cityKey: "global.loc2.city", countryKey: "global.loc2.country", roleKey: "global.division", phone: "+995-511-279-997",
+  { cityKey: "global.loc3.city", countryKey: "global.loc3.country", roleKey: "global.division", phone: "+38-57-732-5193",
+    flagSvg: (
+      <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
+        <rect x="0" y="0" width="60" height="20" fill="#005BBB" />
+        <rect x="0" y="20" width="60" height="20" fill="#FFD500" />
+      </svg>
+    ),
+  },
+  { cityKey: "global.loc2.city", countryKey: "global.loc2.country", roleKey: "global.division", phone: "",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
         <rect x="0" y="0" width="60" height="40" fill="#FFFFFF" />
@@ -36,11 +44,11 @@ const locationKeys = [
       </svg>
     ),
   },
-  { cityKey: "global.loc3.city", countryKey: "global.loc3.country", roleKey: "global.division", phone: "+38-57-732-5193",
+  { cityKey: "global.loc4.city", countryKey: "global.loc4.country", roleKey: "global.division", phone: "",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="0" width="60" height="20" fill="#005BBB" />
-        <rect x="0" y="20" width="60" height="20" fill="#FFD500" />
+        <rect x="0" y="0" width="60" height="40" fill="#FFFFFF" />
+        <circle cx="30" cy="20" r="10" fill="#BC002D" />
       </svg>
     ),
   },
@@ -62,7 +70,7 @@ export default function GlobalPresence() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.08]">
           {locationKeys.map((loc, i) => (
             <AnimatedSection key={loc.cityKey} delay={i * 0.12}>
               <div className="relative group hover:brightness-110 transition-all duration-700 overflow-hidden min-h-[240px] sm:min-h-[300px] flex flex-col">
@@ -89,9 +97,13 @@ export default function GlobalPresence() {
                   <h3 className="text-2xl font-light text-white tracking-wide leading-none">{t(loc.cityKey)}</h3>
                   <p className="mt-1 text-sm text-slate-200 font-light leading-none">{t(loc.countryKey)}</p>
                   <div className="mt-1 pt-1 border-t border-white/[0.12]">
-                    <a href={`tel:${loc.phone.replace(/[^+\d]/g, "")}`} className="text-sm text-slate-200 font-mono tracking-wider hover:text-gold-400 transition-colors">
-                      {loc.phone}
-                    </a>
+                    {loc.phone ? (
+                      <a href={`tel:${loc.phone.replace(/[^+\d]/g, "")}`} className="text-sm text-slate-200 font-mono tracking-wider hover:text-gold-400 transition-colors">
+                        {loc.phone}
+                      </a>
+                    ) : (
+                      <span className="text-sm text-slate-200/40 font-light">&nbsp;</span>
+                    )}
                   </div>
                 </div>
               </div>

@@ -187,6 +187,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "global.loc2.country": "Georgia",
     "global.loc3.city": "Kharkiv",
     "global.loc3.country": "Ukraine",
+    "global.loc4.city": "Tokyo",
+    "global.loc4.country": "Japan",
   },
 
   ja: {
@@ -354,6 +356,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "global.loc2.country": "ジョージア",
     "global.loc3.city": "ハルキウ",
     "global.loc3.country": "ウクライナ",
+    "global.loc4.city": "東京",
+    "global.loc4.country": "日本",
   },
 
   de: {
@@ -521,6 +525,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "global.loc2.country": "Georgien",
     "global.loc3.city": "Charkiw",
     "global.loc3.country": "Ukraine",
+    "global.loc4.city": "Tokio",
+    "global.loc4.country": "Japan",
   },
 
   fr: {
@@ -688,6 +694,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "global.loc2.country": "Géorgie",
     "global.loc3.city": "Kharkiv",
     "global.loc3.country": "Ukraine",
+    "global.loc4.city": "Tokyo",
+    "global.loc4.country": "Japon",
   },
 
   ka: {
@@ -855,6 +863,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "global.loc2.country": "საქართველო",
     "global.loc3.city": "ხარკივი",
     "global.loc3.country": "უკრაინა",
+    "global.loc4.city": "ტოკიო",
+    "global.loc4.country": "იაპონია",
   },
 
   uk: {
@@ -1022,6 +1032,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "global.loc2.country": "Грузія",
     "global.loc3.city": "Харків",
     "global.loc3.country": "Україна",
+    "global.loc4.city": "Токіо",
+    "global.loc4.country": "Японія",
   },
 
   es: {
@@ -1189,5 +1201,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "global.loc2.country": "Georgia",
     "global.loc3.city": "Jarkov",
     "global.loc3.country": "Ucrania",
+    "global.loc4.city": "Tokio",
+    "global.loc4.country": "Japón",
    },
 };

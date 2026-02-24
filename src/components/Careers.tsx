@@ -8,7 +8,7 @@ import { useTranslation } from "@/i18n/LanguageContext";
 const jobs = [
   {
     title: "Mechanical Engineer",
-    location: "Tbilisi, Georgia / Remote",
+    location: "Kharkiv, Ukraine / Tbilisi, Georgia",
     typeKey: "careers.fullTime",
     summary:
       "Design and document aircraft interior components including galleys, monuments, stowage, and cabin panels using industry-standard CAD tools. You will work directly on Tier-1 supplier programs for major OEMs.",
@@ -37,7 +37,7 @@ const jobs = [
   },
   {
     title: "Aerospace / Aero-Astro Engineer",
-    location: "Tbilisi, Georgia / Remote",
+    location: "Kharkiv, Ukraine / Tbilisi, Georgia",
     typeKey: "careers.fullTime",
     summary:
       "Perform structural analysis, FEA, and load reports for aircraft interior systems. You will support multiple concurrent modification programs and work alongside mechanical designers and project engineers.",
@@ -66,7 +66,7 @@ const jobs = [
   },
   {
     title: "Stress Engineer",
-    location: "Tbilisi, Georgia / Remote",
+    location: "Kharkiv, Ukraine / Tbilisi, Georgia",
     typeKey: "careers.fullTime",
     summary:
       "Prepare interface load reports, structural substantiation, and tolerance analysis for interior modifications. You will be responsible for ensuring all structural deliverables meet OEM and regulatory requirements.",
@@ -95,7 +95,7 @@ const jobs = [
   },
   {
     title: "CAD Designer",
-    location: "Tbilisi, Georgia / Remote",
+    location: "Kharkiv, Ukraine / Tbilisi, Georgia",
     typeKey: "careers.fullTime",
     summary:
       "Create production-ready 3D models and 2D drawing packages for aircraft interior programs. You will translate engineering concepts into precise, manufacturing-ready documentation.",
@@ -124,7 +124,7 @@ const jobs = [
   },
   {
     title: "Project Engineer",
-    location: "Seattle, WA / Remote",
+    location: "Tokyo, Japan",
     typeKey: "careers.fullTime",
     summary:
       "Coordinate engineering deliverables across multiple interior modification programs. You will serve as the primary technical interface between SPIA Technik and Tier-1 supplier program teams.",
