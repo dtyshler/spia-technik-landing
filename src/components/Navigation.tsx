@@ -13,16 +13,17 @@ export default function Navigation() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const light = scrolled || !isHome;
 
   const navLinks = [
-    { label: t("nav.about"), href: "/#about" },
-    { label: t("nav.services"), href: "/#services" },
-    { label: t("nav.excellence"), href: "/#excellence" },
-    { label: t("nav.technology"), href: "/#technology" },
-    { label: t("nav.global"), href: "/#global" },
-    { label: t("nav.careers"), href: "/careers" },
+    { label: t("nav.about"), href: "/#about", sectionId: "about" },
+    { label: t("nav.services"), href: "/#services", sectionId: "services" },
+    { label: t("nav.excellence"), href: "/#excellence", sectionId: "excellence" },
+    { label: t("nav.technology"), href: "/#technology", sectionId: "technology" },
+    { label: t("nav.global"), href: "/#global", sectionId: "global" },
+    { label: t("nav.careers"), href: "/careers", sectionId: "careers" },
   ];
 
   useEffect(() => {
@@ -30,6 +31,28 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isHome) return;
+    const sectionIds = ["about", "services", "excellence", "technology", "global", "careers", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          const top = visible.reduce((a, b) =>
+            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+          );
+          setActiveSection(top.target.id);
+        }
+      },
+      { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [isHome]);
 
   return (
     <>
@@ -51,15 +74,25 @@ export default function Navigation() {
 
             <div className="hidden md:flex items-center min-w-0 shrink">
               <div className="flex items-center gap-1 mr-auto">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className={`relative px-3 py-2 text-[10px] sm:text-[11px] lg:text-[12px] tracking-[0.12em] uppercase transition-colors duration-300 ${light ? "text-text-secondary hover:text-text-primary" : "text-white/70 hover:text-white"}`}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isActive = activeSection === link.sectionId;
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className={`relative px-3 py-2 text-[10px] sm:text-[11px] lg:text-[12px] tracking-[0.12em] uppercase transition-colors duration-300 ${
+                        isActive
+                          ? light ? "text-gold-600" : "text-gold-400"
+                          : light ? "text-text-secondary hover:text-text-primary" : "text-white/70 hover:text-white"
+                      }`}
+                    >
+                      {link.label}
+                      {isActive && (
+                        <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gold-500 rounded-full" />
+                      )}
+                    </a>
+                  );
+                })}
                 <div className={`ml-3 shrink-0 ${light ? "text-text-secondary" : "text-white/70"}`}>
                   <LanguageSwitcher />
                 </div>
@@ -108,7 +141,7 @@ export default function Navigation() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="text-2xl tracking-[0.2em] uppercase text-text-primary hover:text-gold-500 transition-colors"
+                  className={`text-2xl tracking-[0.2em] uppercase transition-colors ${activeSection === link.sectionId ? "text-gold-500" : "text-text-primary hover:text-gold-500"}`}
                 >
                   {link.label}
                 </motion.a>
