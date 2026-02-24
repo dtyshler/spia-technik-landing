@@ -35,7 +35,7 @@ export default function Footer() {
           <div>
             <div className="text-[10px] tracking-[0.3em] uppercase text-gold-500/50 mb-4">{t("footer.touch")}</div>
             <div className="space-y-3">
-              <a href="mailto:info@spiatechnik.com" className="block text-[13px] text-slate-400 hover:text-white transition-colors">info@spiatechnik.com</a>
+              <a href="mailto:slava@spiatechnik.com" className="block text-[13px] text-slate-400 hover:text-white transition-colors">slava@spiatechnik.com</a>
               <a href="tel:+12067995955" className="block text-[13px] text-slate-400 hover:text-white transition-colors font-mono">+1-206-799-5955</a>
               <p className="text-[13px] text-slate-400/60 font-light">{t("footer.location")}</p>
             </div>

@@ -14,7 +14,7 @@ export default function Contact() {
     e.preventDefault();
     const subject = encodeURIComponent(`Inquiry from ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`);
     const body = encodeURIComponent(formData.message);
-    window.location.href = `mailto:info@spiatechnik.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:slava@spiatechnik.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -31,7 +31,7 @@ export default function Contact() {
               <div className="mt-8 space-y-4">
                 <div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-gold-500/70 mb-1">{t("contact.email")}</div>
-                  <a href="mailto:info@spiatechnik.com" className="text-[15px] text-text-primary font-light hover:text-gold-500 transition-colors">info@spiatechnik.com</a>
+                  <a href="mailto:slava@spiatechnik.com" className="text-[15px] text-text-primary font-light hover:text-gold-500 transition-colors">slava@spiatechnik.com</a>
                 </div>
                 <div>
                   <div className="text-[10px] tracking-[0.3em] uppercase text-gold-500/70 mb-1">{t("contact.hq")}</div>

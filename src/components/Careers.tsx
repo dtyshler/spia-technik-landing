@@ -225,7 +225,7 @@ export default function Careers() {
         .filter(Boolean)
         .join("\n")
     );
-    window.location.href = `mailto:careers@spiatechnik.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:slava@spiatechnik.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -365,10 +365,10 @@ export default function Careers() {
                           <span className="text-[12px] text-text-muted">
                             {t("careers.orEmail")}{" "}
                             <a
-                              href={`mailto:careers@spiatechnik.com?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
+                              href={`mailto:slava@spiatechnik.com?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
                               className="text-gold-600 hover:text-gold-500 underline underline-offset-4 transition-colors"
                             >
-                              careers@spiatechnik.com
+                              slava@spiatechnik.com
                             </a>
                           </span>
                         </div>
