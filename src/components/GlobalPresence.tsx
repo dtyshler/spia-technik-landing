@@ -4,7 +4,7 @@ import AnimatedSection from "./AnimatedSection";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 const locationKeys = [
-  { cityKey: "global.loc1.city", countryKey: "global.loc1.country", phone: "+1-206-799-5955",
+  { cityKey: "global.loc1.city", countryKey: "global.loc1.country", phone: "",
     roleKey: "global.hq",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -21,7 +21,7 @@ const locationKeys = [
       </svg>
     ),
   },
-  { cityKey: "global.loc3.city", countryKey: "global.loc3.country", roleKey: "global.division", phone: "+38-57-732-5193",
+  { cityKey: "global.loc3.city", countryKey: "global.loc3.country", roleKey: "global.division", phone: "",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
         <rect x="0" y="0" width="60" height="20" fill="#005BBB" />

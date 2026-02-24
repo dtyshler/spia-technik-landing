@@ -30,7 +30,6 @@ const jobs = [
     ],
     preferred: [
       "Direct experience with Boeing 737/787 or Airbus A320/A350 interior programs",
-      "Experience working with Tier-1 suppliers (Safran, Collins, FACC, etc.)",
       "SolidWorks or AutoCAD proficiency as a secondary tool",
       "Exposure to ENOVIA or Teamcenter PLM systems",
     ],
@@ -146,7 +145,6 @@ const jobs = [
       "Ability to manage multiple programs and priorities simultaneously",
     ],
     preferred: [
-      "Experience working with Tier-1 interior suppliers (Safran, Collins, FACC, Jamco)",
       "Background in Boeing or Airbus interior modification programs",
       "PMP certification or equivalent project management training",
       "Knowledge of AS9100 quality management systems",
