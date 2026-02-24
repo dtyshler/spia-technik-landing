@@ -392,7 +392,7 @@ export default function Careers() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.4 }}
-              className="mt-12 bg-white p-8 lg:p-12 border border-light-300"
+              className="mt-12 bg-white p-5 sm:p-8 lg:p-12 border border-light-300"
             >
               <div className="flex items-center justify-between mb-10">
                 <div>

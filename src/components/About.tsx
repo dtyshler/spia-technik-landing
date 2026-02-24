@@ -11,7 +11,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Team photo - dimmed and blurred with highlighted overlay text */}
         <AnimatedSection>
-          <div className="relative w-full aspect-[21/9] overflow-hidden mb-16">
+          <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden mb-16">
             <img
               src="/team-office.png"
               alt={t("about.teamImgAlt")}
@@ -22,7 +22,7 @@ export default function About() {
               <span className="bg-gold-500/80 text-white text-[11px] tracking-[0.4em] uppercase font-bold px-3 py-1.5 mb-4 inline-block shadow-lg">
                 {t("break.team.sub")}
               </span>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-extralight tracking-tight">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight tracking-tight">
                 {t("break.team").split("\n").map((line, i) => (
                   <span key={i}>
                     {i > 0 && <br />}
@@ -67,7 +67,7 @@ export default function About() {
             {["about.cap1", "about.cap2", "about.cap3", "about.cap4", "about.cap5", "about.cap6", "about.cap7", "about.cap8"].map((key) => (
               <span
                 key={key}
-                className="px-4 py-2 text-[13px] tracking-[0.12em] uppercase font-semibold text-black border-2 border-black/20 hover:border-gold-500 hover:text-gold-600 bg-white shadow-sm transition-all duration-300 cursor-default"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-[13px] tracking-[0.12em] uppercase font-semibold text-black border-2 border-black/20 hover:border-gold-500 hover:text-gold-600 bg-white shadow-sm transition-all duration-300 cursor-default"
               >
                 {t(key)}
               </span>

@@ -44,8 +44,8 @@ export default function Excellence() {
         <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-px bg-light-300">
           {stats.map((stat, i) => (
             <AnimatedSection key={stat.labelKey} delay={i * 0.08}>
-              <div className="bg-white p-6 lg:p-8 text-center hover:bg-light-100 transition-all duration-500">
-                <div className="text-4xl md:text-5xl font-extralight text-text-primary tracking-tight font-mono">
+              <div className="bg-white p-4 sm:p-6 lg:p-8 text-center hover:bg-light-100 transition-all duration-500">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-extralight text-text-primary tracking-tight font-mono">
                   <Counter target={stat.value} suffix={stat.suffix} duration={2.5} />
                 </div>
                 <div className="mt-2 text-[13px] text-text-secondary font-light">{t(stat.labelKey)}</div>

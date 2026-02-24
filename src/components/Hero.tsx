@@ -249,8 +249,8 @@ export default function Hero() {
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5">
-        <span className="text-base tracking-[0.35em] uppercase text-gold-400 font-semibold">{t("hero.scroll")}</span>
-        <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="w-[3px] h-20 bg-gradient-to-b from-gold-500 to-transparent rounded-full" />
+        <span className="text-sm sm:text-base tracking-[0.35em] uppercase text-gold-400 font-semibold">{t("hero.scroll")}</span>
+        <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="w-[3px] h-12 sm:h-20 bg-gradient-to-b from-gold-500 to-transparent rounded-full" />
       </motion.div>
     </section>
   );

@@ -125,7 +125,7 @@ export default function ClientLogos() {
 
         {/* Infinite scroll logo row */}
         <div className="relative overflow-hidden">
-          <div className="flex items-center justify-center gap-x-14 md:gap-x-20 lg:gap-x-24 flex-wrap gap-y-8">
+          <div className="flex items-center justify-center gap-x-8 sm:gap-x-14 md:gap-x-20 lg:gap-x-24 flex-wrap gap-y-6 sm:gap-y-8">
             {clients.map((client, i) => (
               <motion.div
                 key={client.name}

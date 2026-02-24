@@ -69,7 +69,7 @@ export default function ImageBreak({
               className="h-1 bg-gold-500 mb-8"
             />
 
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[0.95]">
+            <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[0.95]">
               {overlayText.split("\n").length > 1 ? (
                 overlayText.split("\n").map((line, i) => (
                   <span key={i}>

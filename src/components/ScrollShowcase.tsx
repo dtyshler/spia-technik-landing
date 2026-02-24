@@ -64,7 +64,7 @@ export default function ScrollShowcase() {
   const modelProgress = scrollProgress * showcaseItems.length - activeIndex;
 
   return (
-    <section ref={containerRef} className="relative h-[300vh]">
+    <section ref={containerRef} className="relative h-[200vh] sm:h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Blueprint grid background - MORE visible */}
         <div className="absolute inset-0 bg-navy-950">
@@ -111,7 +111,7 @@ export default function ScrollShowcase() {
                   <span className="text-[12px] tracking-[0.4em] uppercase text-gold-500 font-mono">
                     {showcaseItems[activeIndex].label}
                   </span>
-                  <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-extralight tracking-tight text-white leading-[1.1]">
+                  <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight tracking-tight text-white leading-[1.1]">
                     {showcaseItems[activeIndex].title}
                   </h2>
                   <p className="mt-6 text-[16px] text-slate-400 font-light leading-relaxed max-w-md">
@@ -166,7 +166,7 @@ export default function ScrollShowcase() {
             </div>
 
             {/* Right: 3D Model */}
-            <div className="order-1 lg:order-2 h-[50vh] lg:h-[75vh] relative">
+            <div className="order-1 lg:order-2 h-[35vh] sm:h-[50vh] lg:h-[75vh] relative">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-96 h-96 bg-gold-500/[0.06] rounded-full blur-[100px]" />
               </div>

@@ -17,8 +17,8 @@ function LogoCarousel() {
   return (
     <div className="relative overflow-hidden py-6">
       {/* Faint left/right gradients, invisible in the middle */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-white/60 via-white/10 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-white/60 via-white/10 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 md:w-48 bg-gradient-to-r from-white/60 via-white/10 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 md:w-48 bg-gradient-to-l from-white/60 via-white/10 to-transparent z-10 pointer-events-none" />
       <motion.div className="flex items-center gap-14" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
         {doubled.map((tool, i) => (
           <div key={`${tool.name}-${i}`} className="flex-shrink-0 flex flex-col items-center gap-2">

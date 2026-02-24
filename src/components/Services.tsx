@@ -28,7 +28,7 @@ export default function Services() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-light-300">
           {services.map((s, i) => (
             <AnimatedSection key={s.number} delay={i * 0.08}>
-              <div className="group bg-white p-8 lg:p-10 hover:bg-light-100 transition-all duration-500 relative">
+              <div className="group bg-white p-5 sm:p-8 lg:p-10 hover:bg-light-100 transition-all duration-500 relative">
                 <span className="text-[11px] tracking-[0.3em] text-gold-500/60 font-mono">{s.number}</span>
                 <h3 className="mt-4 text-xl font-normal tracking-wide text-text-primary">{t(s.titleKey)}</h3>
                 <p className="mt-3 text-[15px] text-text-secondary font-light leading-relaxed">{t(s.descKey)}</p>

@@ -65,19 +65,19 @@ export default function GlobalPresence() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08]">
           {locationKeys.map((loc, i) => (
             <AnimatedSection key={loc.cityKey} delay={i * 0.12}>
-              <div className="relative group hover:brightness-110 transition-all duration-700 overflow-hidden min-h-[300px] flex flex-col">
+              <div className="relative group hover:brightness-110 transition-all duration-700 overflow-hidden min-h-[240px] sm:min-h-[300px] flex flex-col">
                 {/* Flag - full vibrant color */}
                 <div className="absolute inset-0">{loc.flagSvg}</div>
 
                 {/* Gradient: transparent at top → solid black at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent from-20% via-black/50 via-55% to-black/95 to-85%" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent from-10% via-black/55 via-45% to-black/90 to-75%" />
 
                 {/* Top spacer - flag shows in full color here */}
-                <div className="flex-1 relative z-10" />
+                <div className="flex-1 relative z-10 min-h-[60px]" />
 
                 {/* Bottom content area - on solid dark gradient */}
-                <div className="relative z-10 p-8 lg:p-10">
-                  <div className="flex items-center gap-3 mb-3">
+                <div className="relative z-10 px-8 lg:px-10 pb-0 lg:pb-1 pt-0 mt-auto">
+                  <div className="flex items-center gap-2 mb-1">
                     <div className="relative w-2 h-2">
                       <div className="absolute inset-0 rounded-full bg-gold-500/40 animate-ping" />
                       <div className="w-2 h-2 rounded-full bg-gold-500" />
@@ -86,9 +86,9 @@ export default function GlobalPresence() {
                       {t(loc.roleKey)}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-light text-white tracking-wide">{t(loc.cityKey)}</h3>
-                  <p className="mt-1 text-sm text-slate-200 font-light">{t(loc.countryKey)}</p>
-                  <div className="mt-5 pt-4 border-t border-white/[0.12]">
+                  <h3 className="text-2xl font-light text-white tracking-wide leading-none">{t(loc.cityKey)}</h3>
+                  <p className="mt-1 text-sm text-slate-200 font-light leading-none">{t(loc.countryKey)}</p>
+                  <div className="mt-1 pt-1 border-t border-white/[0.12]">
                     <a href={`tel:${loc.phone.replace(/[^+\d]/g, "")}`} className="text-sm text-slate-200 font-mono tracking-wider hover:text-gold-400 transition-colors">
                       {loc.phone}
                     </a>
