@@ -14,7 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  icons: { icon: "/favicon-airplane.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon-airplane.png", type: "image/png" },
+      { url: "/favicon-airplane.svg", type: "image/svg+xml" },
+    ],
+  },
   title: "SPIA Technik — Advanced Aviation Engineering",
   description:
     "SPIA Technik delivers advanced engineering solutions for commercial aviation and VIP aircraft interiors. Decades of experience with Airbus and Boeing platforms.",
