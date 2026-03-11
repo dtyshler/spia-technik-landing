@@ -44,14 +44,6 @@ const locationKeys = [
       </svg>
     ),
   },
-  { cityKey: "global.loc4.city", countryKey: "global.loc4.country", roleKey: "global.division", phone: "",
-    flagSvg: (
-      <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="0" width="60" height="40" fill="#FFFFFF" />
-        <circle cx="30" cy="20" r="10" fill="#BC002D" />
-      </svg>
-    ),
-  },
 ];
 
 export default function GlobalPresence() {
@@ -70,7 +62,7 @@ export default function GlobalPresence() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.08]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/[0.08]">
           {locationKeys.map((loc, i) => (
             <AnimatedSection key={loc.cityKey} delay={i * 0.12}>
               <div className="relative group hover:brightness-110 transition-all duration-700 overflow-hidden min-h-[240px] sm:min-h-[300px] flex flex-col">
