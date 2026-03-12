@@ -29,14 +29,6 @@ const locationKeys = [
       </svg>
     ),
   },
-  { cityKey: "global.loc4.city", countryKey: "global.loc4.country", roleKey: "global.liaison", phone: "",
-    flagSvg: (
-      <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="0" width="60" height="40" fill="#FFFFFF" />
-        <circle cx="30" cy="20" r="10" fill="#BC002D" />
-      </svg>
-    ),
-  },
   { cityKey: "global.loc2.city", countryKey: "global.loc2.country", roleKey: "global.division", phone: "",
     flagSvg: (
       <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -49,6 +41,14 @@ const locationKeys = [
             <rect x={cx-1} y={cy-3} width={2} height={6} fill="#FF0000" />
           </g>
         ))}
+      </svg>
+    ),
+  },
+  { cityKey: "global.loc4.city", countryKey: "global.loc4.country", roleKey: "global.liaison", phone: "",
+    flagSvg: (
+      <svg viewBox="0 0 60 40" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
+        <rect x="0" y="0" width="60" height="40" fill="#FFFFFF" />
+        <circle cx="30" cy="20" r="10" fill="#BC002D" />
       </svg>
     ),
   },
